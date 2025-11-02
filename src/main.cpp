@@ -11,12 +11,10 @@ void framebuffer_size_callback(GLFWwindow *window, int width, int height);
 void processInput(GLFWwindow *window);
 void init_triangle(uint *VAO, uint *VBO, float *vertices, size_t vertices_size);
 void draw_indices(uint VAO, uint triangle_count);
-//void draw_triangles(uint VAO, uint triangle_count);
 void init_ebo(uint *EBO, uint *indices, size_t indices_size);
 void init_attribute(unsigned char attribute_index, uint size_index, uint size_vertex, uint offset);
 void init_vertices(uint initializedVAO, uint initializedVBO, float *vertices);
 uint init_texture();
-//unsigned int create_shader(const char* fragmentShaderSource);
 
 const char* vertexShaderPath = "shader_files/inverse_vertex.vert";
 const char* normalVertexPath = "shader_files/normal_vert.vert";
@@ -34,37 +32,6 @@ enum VertexType {
     EBO = 2,
 };
 
-//struct VertexObject {
-//    VertexType vertex_type;
-//    uint VAO, VBO, EBO;
-//    uint texture;
-//    std::vector<float> vertices;
-//
-//    ~VertexObject() {
-//        switch (vertex_type)
-//        {
-//            case VertexType::VAO:
-//                glDeleteVertexArrays(1, &VAO);
-//                break;
-//            case VertexType::VBO:
-//                glDeleteBuffers(1, &VBO);
-//            case VertexType::EBO:
-//                glDeleteBuffers(1, &EBO);
-//              break;
-//        }
-//
-//        if (texture)
-//        {
-//            glDeleteTextures(1, &texture);
-//        }
-//    }
-//};
-//
-//struct Program {
-//    uint shader_id;
-//    std::vector<VertexObject> vertex_objects;
-//};
-//
 int main()
 {
 	// glfw: initialize and configure
@@ -169,7 +136,6 @@ void draw_indices(uint VAO, uint triangle_count)
         glBindVertexArray(0);
 }
 
-
 void init_triangle(uint* VAO, uint* VBO, float *vertices, size_t vertices_size)
 {
     glGenVertexArrays(1, VAO);
@@ -237,47 +203,6 @@ void framebuffer_size_callback(GLFWwindow *window, int width, int height)
 	// make sure the viewport matches the new window dimensions; note that width and
 	// height will be significantly larger than specified on retina displays.
 	glViewport(0, 0, width, height);
-}
-
-void create_ebo()
-{
-//    float ve//rtices[] = {
-//        // Left Front bottom
-//        -.5f, -.5f, .5f,
-//        // Right Front bottom
-//        .5f, -.5f, .5f,
-//        // Right Back bottom
-//        .5f, -.5f, -.5f,
-//        // Left Back bottom
-//        -.5f, -.5f, -.5f,
-//        // Top Middle
-//        .0f, .5f, .0f
-//    };
-//    
-//    unsigned int indices[] = {
-//        0, 1, 4,
-//        1, 2, 4,
-//        2, 3, 4,
-//        3, 0, 4
-//    };
-//
-//    glGenBuffers(1, &EBO);
-//    glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-      //glBindVertexArray(0);
-//    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-//    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-//
-//
-//    float vertices[] = {
-//        .5f, .5f, .0f,
-//        .5f, -.5f, .0f,
-//        -.5f, -.5f, .0f,
-//        -.5f, .5f, .0f
-//    };
-//    unsigned int indices[] = {
-//        0, 1, 3,
-//        1, 2, 3
-//    };
 }
 
 void init_other()
