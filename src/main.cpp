@@ -26,12 +26,6 @@ const char* textureFragShaderPath = "shader_files/texture_fragment.frag";
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 
-enum VertexType {
-    VAO = 0,
-    VBO = 1,
-    EBO = 2,
-};
-
 int main()
 {
 	// glfw: initialize and configure
